@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dwpc8p5mtr5nw"]
+
+[node name="Area2D" type="Area2D" unique_id=1191885801]
+collision_mask = 2

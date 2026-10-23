@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://kiln_halloween/godot/demo_halloween.gd" id="1_script"]
+[ext_resource type="TileSet" path="res://kiln_halloween/Tilesets/graveyard/kiln_halloween_graveyard.tres" id="2_tiles"]
+[ext_resource type="SpriteFrames" path="res://kiln_halloween/Characters/heroes/kid_ghost/kid_ghost.tres" id="3_hero"]
+
+[node name="DemoHalloween" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_script")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_tiles")
+
+[node name="Hero" type="AnimatedSprite2D" parent="."]
+position = Vector2(200, 96)
+sprite_frames = ExtResource("3_hero")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(208, 112)
+zoom = Vector2(3, 3)

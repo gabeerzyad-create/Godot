@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://ohuu7dn2m4p0"]
+
+[ext_resource type="PackedScene" uid="uid://roi5gsat5n08" path="res://brackeys_platformer_assets/killzone.tscn" id="2_q0kmj"]
+
+[sub_resource type="GDScript" id="GDScript_2m14u"]
+script/source = "extends Node2D
+const speed = 60
+
+var direction = 1
+@onready var ray_cast_right: RayCast2D = $\"ray cast right\"
+@onready var ray_cast_left: RayCast2D = $\"ray cast left\"
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+
+
+
+# Called every frame. 'delta' is the elas frame.
+func _process(delta):
+	position.x += direction * speed * delta
+	if ray_cast_right.is_colliding():
+		direction = -1
+		animated_sprite.flip_h = true
+	if ray_cast_left.is_colliding():
+		direction = 1
+		animated_sprite.flip_h = false
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jy5qn"]
+load_path = "res://.godot/imported/kid_ghost_idle_strip4.png-a927340e39d45e7ea337b238ecca739c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m14u"]
+atlas = SubResource("CompressedTexture2D_jy5qn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hyl5"]
+atlas = SubResource("CompressedTexture2D_jy5qn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4la3q"]
+atlas = SubResource("CompressedTexture2D_jy5qn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htmc0"]
+atlas = SubResource("CompressedTexture2D_jy5qn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjqgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m14u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hyl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4la3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htmc0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjqgx"]
+size = Vector2(10, 12)
+
+[node name="monster" type="Node2D" unique_id=706408391]
+script = SubResource("GDScript_2m14u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1358107975]
+sprite_frames = SubResource("SpriteFrames_bjqgx")
+autoplay = "default"
+frame_progress = 0.42858517
+
+[node name="killzone" parent="." unique_id=1271866050 instance=ExtResource("2_q0kmj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=789033644]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_bjqgx")
+
+[node name="ray cast right" type="RayCast2D" parent="." unique_id=322108000]
+position = Vector2(1, 6)
+target_position = Vector2(8, 1)
+
+[node name="ray cast left" type="RayCast2D" parent="." unique_id=1405738188]
+position = Vector2(1, 6)
+target_position = Vector2(-10, 0)

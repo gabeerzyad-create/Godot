@@ -1,0 +1,659 @@
+{
+ "pack": "KILN HALLOWEEN - Free Sampler",
+ "version": "1.0",
+ "by": "bitkiln",
+ "tile_size": 16,
+ "tilesets": {
+  "graveyard": {
+   "title": "Haunted Graveyard",
+   "image": "Tilesets/graveyard/kiln_halloween_graveyard_tiles.png",
+   "columns": 16,
+   "rows": 23,
+   "godot_tileset": "Tilesets/graveyard/kiln_halloween_graveyard.tres",
+   "tiled_tileset": "Tilesets/graveyard/kiln_halloween_graveyard.tsx",
+   "terrains": [
+    "Grass",
+    "Hedge",
+    "Ectoplasm",
+    "Grave",
+    "Path"
+   ],
+   "floor_details": [
+    "leaves",
+    "flowers",
+    "dirt",
+    "pebbles",
+    "bones",
+    "mushrooms",
+    "candy",
+    "skull"
+   ],
+   "wall_variants": [
+    "roses",
+    "lantern",
+    "skull",
+    "web"
+   ],
+   "layout": {
+    "floors": "row 0, cols 0-7",
+    "floor_details": "row 0, cols 8-15",
+    "wall_variants_doors_gates_stairs": "row 1",
+    "walls_blob47": "rows 2-4",
+    "pits_blob47": "rows 5-7",
+    "liquid_blob47_animated": "rows 8-19 (4 frames side by side)",
+    "path_blob47": "rows 20-22"
+   }
+  }
+ },
+ "props": [
+  {
+   "name": "tombstone",
+   "category": "graves",
+   "file": "Props/graves/tombstone.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  },
+  {
+   "name": "tombstone_cross",
+   "category": "graves",
+   "file": "Props/graves/tombstone_cross.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  },
+  {
+   "name": "tombstone_broken",
+   "category": "graves",
+   "file": "Props/graves/tombstone_broken.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  },
+  {
+   "name": "grave_mound",
+   "category": "graves",
+   "file": "Props/graves/grave_mound.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  },
+  {
+   "name": "shovel",
+   "category": "graves",
+   "file": "Props/graves/shovel.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  },
+  {
+   "name": "jack_classic",
+   "category": "pumpkins",
+   "file": "Props/pumpkins/jack_classic_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 6,
+   "loop": true
+  },
+  {
+   "name": "pumpkin_small",
+   "category": "pumpkins",
+   "file": "Props/pumpkins/pumpkin_small.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  },
+  {
+   "name": "pumpkin_big",
+   "category": "pumpkins",
+   "file": "Props/pumpkins/pumpkin_big.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  },
+  {
+   "name": "dead_tree",
+   "category": "nature",
+   "file": "Props/nature/dead_tree.png",
+   "w": 32,
+   "h": 48,
+   "frames": 1
+  },
+  {
+   "name": "fence_iron",
+   "category": "fences",
+   "file": "Props/fences/fence_iron.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  },
+  {
+   "name": "fence_iron_post",
+   "category": "fences",
+   "file": "Props/fences/fence_iron_post.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  },
+  {
+   "name": "lamp_post",
+   "category": "lights",
+   "file": "Props/lights/lamp_post_strip4.png",
+   "w": 16,
+   "h": 32,
+   "frames": 4,
+   "fps": 6,
+   "loop": true
+  },
+  {
+   "name": "candles",
+   "category": "lights",
+   "file": "Props/lights/candles_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 8,
+   "loop": true
+  },
+  {
+   "name": "crow",
+   "category": "nature",
+   "file": "Props/nature/crow_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 4,
+   "loop": true
+  },
+  {
+   "name": "cobweb_left",
+   "category": "decor",
+   "file": "Props/decor/cobweb_left.png",
+   "w": 16,
+   "h": 16,
+   "frames": 1
+  }
+ ],
+ "characters": [
+  {
+   "name": "kid_ghost",
+   "category": "heroes",
+   "anim": "idle",
+   "file": "Characters/heroes/kid_ghost/kid_ghost_idle_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 6,
+   "loop": true
+  },
+  {
+   "name": "kid_ghost",
+   "category": "heroes",
+   "anim": "run",
+   "file": "Characters/heroes/kid_ghost/kid_ghost_run_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 10,
+   "loop": true
+  },
+  {
+   "name": "kid_ghost",
+   "category": "heroes",
+   "anim": "attack",
+   "file": "Characters/heroes/kid_ghost/kid_ghost_attack_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 12,
+   "loop": false
+  },
+  {
+   "name": "kid_ghost",
+   "category": "heroes",
+   "anim": "hit",
+   "file": "Characters/heroes/kid_ghost/kid_ghost_hit_strip2.png",
+   "w": 16,
+   "h": 16,
+   "frames": 2,
+   "fps": 10,
+   "loop": false
+  },
+  {
+   "name": "kid_ghost",
+   "category": "heroes",
+   "anim": "death",
+   "file": "Characters/heroes/kid_ghost/kid_ghost_death_strip5.png",
+   "w": 16,
+   "h": 16,
+   "frames": 5,
+   "fps": 10,
+   "loop": false
+  },
+  {
+   "name": "black_cat",
+   "category": "monsters",
+   "anim": "idle",
+   "file": "Characters/monsters/black_cat/black_cat_idle_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 6,
+   "loop": true
+  },
+  {
+   "name": "black_cat",
+   "category": "monsters",
+   "anim": "run",
+   "file": "Characters/monsters/black_cat/black_cat_run_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 10,
+   "loop": true
+  },
+  {
+   "name": "black_cat",
+   "category": "monsters",
+   "anim": "attack",
+   "file": "Characters/monsters/black_cat/black_cat_attack_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 12,
+   "loop": false
+  },
+  {
+   "name": "black_cat",
+   "category": "monsters",
+   "anim": "hit",
+   "file": "Characters/monsters/black_cat/black_cat_hit_strip2.png",
+   "w": 16,
+   "h": 16,
+   "frames": 2,
+   "fps": 10,
+   "loop": false
+  },
+  {
+   "name": "black_cat",
+   "category": "monsters",
+   "anim": "death",
+   "file": "Characters/monsters/black_cat/black_cat_death_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 10,
+   "loop": false
+  },
+  {
+   "name": "jack_hopper",
+   "category": "monsters",
+   "anim": "idle",
+   "file": "Characters/monsters/jack_hopper/jack_hopper_idle_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 6,
+   "loop": true
+  },
+  {
+   "name": "jack_hopper",
+   "category": "monsters",
+   "anim": "run",
+   "file": "Characters/monsters/jack_hopper/jack_hopper_run_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 10,
+   "loop": true
+  },
+  {
+   "name": "jack_hopper",
+   "category": "monsters",
+   "anim": "attack",
+   "file": "Characters/monsters/jack_hopper/jack_hopper_attack_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 12,
+   "loop": false
+  },
+  {
+   "name": "jack_hopper",
+   "category": "monsters",
+   "anim": "hit",
+   "file": "Characters/monsters/jack_hopper/jack_hopper_hit_strip2.png",
+   "w": 16,
+   "h": 16,
+   "frames": 2,
+   "fps": 10,
+   "loop": false
+  },
+  {
+   "name": "jack_hopper",
+   "category": "monsters",
+   "anim": "death",
+   "file": "Characters/monsters/jack_hopper/jack_hopper_death_strip6.png",
+   "w": 16,
+   "h": 16,
+   "frames": 6,
+   "fps": 10,
+   "loop": false
+  },
+  {
+   "name": "pumpkin_head",
+   "category": "monsters",
+   "anim": "idle",
+   "file": "Characters/monsters/pumpkin_head/pumpkin_head_idle_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 6,
+   "loop": true
+  },
+  {
+   "name": "pumpkin_head",
+   "category": "monsters",
+   "anim": "run",
+   "file": "Characters/monsters/pumpkin_head/pumpkin_head_run_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 10,
+   "loop": true
+  },
+  {
+   "name": "pumpkin_head",
+   "category": "monsters",
+   "anim": "attack",
+   "file": "Characters/monsters/pumpkin_head/pumpkin_head_attack_strip4.png",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 12,
+   "loop": false
+  },
+  {
+   "name": "pumpkin_head",
+   "category": "monsters",
+   "anim": "hit",
+   "file": "Characters/monsters/pumpkin_head/pumpkin_head_hit_strip2.png",
+   "w": 16,
+   "h": 16,
+   "frames": 2,
+   "fps": 10,
+   "loop": false
+  },
+  {
+   "name": "pumpkin_head",
+   "category": "monsters",
+   "anim": "death",
+   "file": "Characters/monsters/pumpkin_head/pumpkin_head_death_strip5.png",
+   "w": 16,
+   "h": 16,
+   "frames": 5,
+   "fps": 10,
+   "loop": false
+  }
+ ],
+ "items": [
+  {
+   "name": "candy_wrapped_pumpkin",
+   "category": "candy",
+   "index": 0,
+   "col": 0,
+   "row": 0,
+   "file": "Items/icons/candy/candy_wrapped_pumpkin.png"
+  },
+  {
+   "name": "candy_wrapped_candy",
+   "category": "candy",
+   "index": 1,
+   "col": 1,
+   "row": 0,
+   "file": "Items/icons/candy/candy_wrapped_candy.png"
+  },
+  {
+   "name": "lollipop_pink",
+   "category": "candy",
+   "index": 2,
+   "col": 2,
+   "row": 0,
+   "file": "Items/icons/candy/lollipop_pink.png"
+  },
+  {
+   "name": "candy_corn",
+   "category": "candy",
+   "index": 3,
+   "col": 3,
+   "row": 0,
+   "file": "Items/icons/candy/candy_corn.png"
+  },
+  {
+   "name": "chocolate_bar",
+   "category": "candy",
+   "index": 4,
+   "col": 4,
+   "row": 0,
+   "file": "Items/icons/candy/chocolate_bar.png"
+  },
+  {
+   "name": "potion_ecto",
+   "category": "potions",
+   "index": 5,
+   "col": 5,
+   "row": 0,
+   "file": "Items/icons/potions/potion_ecto.png"
+  },
+  {
+   "name": "potion_brew",
+   "category": "potions",
+   "index": 6,
+   "col": 6,
+   "row": 0,
+   "file": "Items/icons/potions/potion_brew.png"
+  },
+  {
+   "name": "eyeball",
+   "category": "ingredients",
+   "index": 7,
+   "col": 7,
+   "row": 0,
+   "file": "Items/icons/ingredients/eyeball.png"
+  },
+  {
+   "name": "bat_wing",
+   "category": "ingredients",
+   "index": 8,
+   "col": 8,
+   "row": 0,
+   "file": "Items/icons/ingredients/bat_wing.png"
+  },
+  {
+   "name": "garlic",
+   "category": "gear",
+   "index": 9,
+   "col": 9,
+   "row": 0,
+   "file": "Items/icons/gear/garlic.png"
+  },
+  {
+   "name": "lantern",
+   "category": "gear",
+   "index": 10,
+   "col": 10,
+   "row": 0,
+   "file": "Items/icons/gear/lantern.png"
+  },
+  {
+   "name": "skeleton_key",
+   "category": "gear",
+   "index": 11,
+   "col": 11,
+   "row": 0,
+   "file": "Items/icons/gear/skeleton_key.png"
+  }
+ ],
+ "ui": [
+  {
+   "name": "panel_tomb",
+   "file": "UI/panel_tomb.png",
+   "w": 48,
+   "h": 48
+  },
+  {
+   "name": "slot_normal",
+   "file": "UI/slot_normal.png",
+   "w": 18,
+   "h": 18
+  },
+  {
+   "name": "slot_selected",
+   "file": "UI/slot_selected.png",
+   "w": 18,
+   "h": 18
+  },
+  {
+   "name": "bar_frame",
+   "file": "UI/bar_frame.png",
+   "w": 48,
+   "h": 8
+  },
+  {
+   "name": "bar_fill_health",
+   "file": "UI/bar_fill_health.png",
+   "w": 44,
+   "h": 4
+  },
+  {
+   "name": "button_normal",
+   "file": "UI/button_normal.png",
+   "w": 32,
+   "h": 16
+  },
+  {
+   "name": "button_hover",
+   "file": "UI/button_hover.png",
+   "w": 32,
+   "h": 16
+  },
+  {
+   "name": "button_pressed",
+   "file": "UI/button_pressed.png",
+   "w": 32,
+   "h": 16
+  },
+  {
+   "name": "cursor_claw",
+   "file": "UI/cursor_claw.png",
+   "w": 16,
+   "h": 16
+  },
+  {
+   "name": "icon_heart",
+   "file": "UI/icon_heart.png",
+   "w": 16,
+   "h": 16
+  },
+  {
+   "name": "icon_candy",
+   "file": "UI/icon_candy.png",
+   "w": 16,
+   "h": 16
+  },
+  {
+   "name": "digits_damage",
+   "file": "UI/digits_damage.png",
+   "w": 70,
+   "h": 7
+  }
+ ],
+ "fx": [],
+ "ui_digits_order": [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "+",
+  "-",
+  "!",
+  "x"
+ ],
+ "ui_notes": {
+  "panels": "48x48, 9-slice with 16 px corners",
+  "moon_phases_strip8": "8 frames of 16x16: new moon -> full -> new"
+ },
+ "blob47_masks": [
+  0,
+  1,
+  4,
+  5,
+  7,
+  16,
+  17,
+  20,
+  21,
+  23,
+  28,
+  29,
+  31,
+  64,
+  65,
+  68,
+  69,
+  71,
+  80,
+  81,
+  84,
+  85,
+  87,
+  92,
+  93,
+  95,
+  112,
+  113,
+  116,
+  117,
+  119,
+  124,
+  125,
+  127,
+  193,
+  197,
+  199,
+  209,
+  213,
+  215,
+  221,
+  223,
+  241,
+  245,
+  247,
+  253,
+  255
+ ],
+ "blob47_bits": {
+  "N": 1,
+  "NE": 2,
+  "E": 4,
+  "SE": 8,
+  "S": 16,
+  "SW": 32,
+  "W": 64,
+  "NW": 128
+ },
+ "blob47_note": "index i of a 47-piece block = column i % 16, row (block start) + i // 16; liquid pieces are 4 frames wide: piece i at column (i % 4) * 4, row 8 + i // 4",
+ "counts": {
+  "biomes": 1,
+  "props": 15,
+  "characters": 4,
+  "items": 12
+ }
+}

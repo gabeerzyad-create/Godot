@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="26" height="14" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="30">
+ <tileset firstgid="1" source="../kiln_halloween/Tilesets/graveyard/kiln_halloween_graveyard.tsx"/>
+ <tileset firstgid="369" source="kiln_halloween_objects.tsx"/>
+ <layer id="1" name="Tiles" width="26" height="14">
+  <data encoding="csv">
+79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,
+77,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,74,
+75,6,5,4,3,2,1,8,7,6,5,4,331,347,1,8,7,6,5,4,3,2,1,8,7,45,
+75,1,8,7,6,5,4,3,2,1,8,7,333,363,4,3,2,1,8,7,6,5,4,3,2,45,
+75,4,3,2,1,8,7,6,5,4,3,2,333,363,7,6,5,4,3,91,107,8,7,6,5,45,
+75,7,6,5,4,3,328,336,336,336,336,336,346,364,336,336,336,334,6,85,115,3,2,1,8,45,
+75,2,1,8,7,6,327,4,3,2,1,8,333,363,5,4,3,2,326,8,7,6,5,4,3,45,
+75,5,4,3,2,1,327,7,6,5,4,3,333,363,8,7,6,5,327,3,2,1,8,7,6,45,
+75,8,169,253,233,4,327,2,1,8,7,6,333,363,3,2,1,8,324,336,336,339,3,2,1,45,
+75,3,145,293,301,181,322,5,4,3,2,1,333,363,6,5,4,3,2,1,8,327,6,5,4,45,
+75,6,5,145,265,2,1,8,7,6,5,4,333,363,1,8,7,6,5,4,3,322,1,8,7,45,
+75,1,8,7,6,5,4,3,2,1,8,7,333,363,4,3,2,1,8,7,6,5,4,3,2,45,
+75,4,3,2,1,8,7,6,5,4,3,2,333,363,7,6,5,4,3,2,1,8,7,6,5,45,
+78,64,64,64,64,64,64,64,64,64,64,59,333,363,43,64,64,64,64,64,64,64,64,64,64,66
+  </data>
+ </layer>
+ <objectgroup id="2" name="Props and characters">
+  <object id="1" name="dead_tree" gid="376" x="16" y="80" width="32" height="48"/>
+  <object id="2" name="lamp_post" gid="381" x="160" y="96" width="16" height="32"/>
+  <object id="3" name="lamp_post" gid="381" x="224" y="96" width="16" height="32"/>
+  <object id="4" name="tombstone" gid="369" x="32" y="48" width="16" height="16"/>
+  <object id="5" name="tombstone_cross" gid="370" x="64" y="48" width="16" height="16"/>
+  <object id="6" name="tombstone" gid="369" x="128" y="48" width="16" height="16"/>
+  <object id="7" name="tombstone" gid="369" x="336" y="48" width="16" height="16"/>
+  <object id="8" name="tombstone_cross" gid="370" x="368" y="48" width="16" height="16"/>
+  <object id="9" name="tombstone_broken" gid="371" x="48" y="112" width="16" height="16"/>
+  <object id="10" name="tombstone_broken" gid="371" x="144" y="128" width="16" height="16"/>
+  <object id="11" name="tombstone_cross" gid="370" x="240" y="128" width="16" height="16"/>
+  <object id="12" name="grave_mound" gid="372" x="336" y="80" width="16" height="16"/>
+  <object id="13" name="shovel" gid="373" x="352" y="96" width="16" height="16"/>
+  <object id="14" name="fence_iron" gid="377" x="112" y="80" width="16" height="16"/>
+  <object id="15" name="fence_iron" gid="377" x="128" y="80" width="16" height="16"/>
+  <object id="16" name="fence_iron" gid="377" x="240" y="80" width="16" height="16"/>
+  <object id="17" name="fence_iron" gid="377" x="256" y="80" width="16" height="16"/>
+  <object id="18" name="candles" gid="382" x="32" y="192" width="16" height="16"/>
+  <object id="19" name="crow" gid="383" x="98" y="48" width="16" height="16"/>
+  <object id="20" name="crow" gid="383" x="339" y="48" width="16" height="16"/>
+  <object id="21" name="pumpkin_big" gid="375" x="304" y="176" width="16" height="16"/>
+  <object id="22" name="jack_classic" gid="380" x="256" y="176" width="16" height="16"/>
+  <object id="23" name="jack_classic" gid="380" x="224" y="208" width="16" height="16"/>
+  <object id="24" name="pumpkin_small" gid="374" x="288" y="208" width="16" height="16"/>
+  <object id="25" name="candles" gid="382" x="128" y="192" width="16" height="16"/>
+  <object id="26" name="black_cat" gid="385" x="96" y="176" width="16" height="16"/>
+  <object id="27" name="jack_hopper" gid="386" x="288" y="160" width="16" height="16"/>
+  <object id="28" name="kid_ghost" gid="384" x="192" y="160" width="16" height="16"/>
+  <object id="29" name="pumpkin_head" gid="387" x="128" y="144" width="16" height="16"/>
+ </objectgroup>
+</map>

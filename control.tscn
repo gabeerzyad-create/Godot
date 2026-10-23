@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dmm1pesjamyfj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bjqgx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jovo"]
+bg_color = Color(0, 0.70871705, 0.493643, 1)
+
+[sub_resource type="GDScript" id="GDScript_bjqgx"]
+resource_name = "health bar"
+script/source = "extends ProgressBar
+@onready var timer=$Timer
+@onready var Damage_bar=$\"damage bar\"
+
+
+var health= 100 : set = _set_health
+
+func _process(delta: float) -> void:
+	Damage_bar.value = Global.health
+
+func _set_health(new_health):
+	var prev_health=health
+	health = min(max_value, new_health)
+	value = health
+	#if health <=0:
+		#queue_free()
+	
+	if health<prev_health:
+		timer.start()
+	else:
+		Damage_bar.value=health
+
+
+
+func init_health(_health):
+	health=_health
+	max_value=health
+	value = health
+	Damage_bar.max_value=health
+	Damage_bar.value=health
+	
+
+
+func _on_timer_timeout() -> void:
+	Damage_bar.vallue=health
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjqgx"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27450982)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xlpn"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="health" type="Control" unique_id=1062418681]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="healthbar" type="ProgressBar" parent="." unique_id=1483795232]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_bjqgx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8jovo")
+value = 60.0
+show_percentage = false
+script = SubResource("GDScript_bjqgx")
+
+[node name="damage bar" type="ProgressBar" parent="healthbar" unique_id=1475436336]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bjqgx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1xlpn")
+value = 80.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="healthbar" unique_id=2102862567]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="healthbar/Timer" to="healthbar" method="_on_timer_timeout"]
